@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import getRandomAgentName from "../libs/getRandomAgentName";
+import getRandomAgentUuid from "../libs/getRandomAgentUuid";
 
 interface DefaultButtonProps {
 	text: string;
@@ -17,7 +17,7 @@ export const DefaultButton: React.FC<DefaultButtonProps> = ({ text, link }) => {
 	useEffect(() => {
 		const resolveLink = async () => {
 			if (!link) {
-				const newLink = await getRandomAgentName();
+				const newLink = await getRandomAgentUuid();
 				setResolvedLink(newLink);
 			}
 			else {

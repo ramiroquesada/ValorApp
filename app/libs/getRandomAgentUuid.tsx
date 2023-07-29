@@ -1,5 +1,5 @@
 
-export default async function getRandomAgentName(): Promise<string > {
+export default async function getRandomAgentUuid(): Promise<string > {
 
 
 	try {
@@ -7,13 +7,9 @@ export default async function getRandomAgentName(): Promise<string > {
 			.then(response => response.json());
 
 		const randomAgentIndex = Math.floor(Math.random() * response.data.length);
-		const randomAgentName = response.data[randomAgentIndex].displayName;
-
-		if ( randomAgentName === 'KAY/O' ){
-			return `/agents/KAY-O`
-		}
-
-		return `/agents/${randomAgentName}`;
+		const randomAgentUuid = response.data[randomAgentIndex].uuid;
+		
+		return `/agents/${randomAgentUuid}`;
 
 	} catch (error) {
 		throw new Error('error');
