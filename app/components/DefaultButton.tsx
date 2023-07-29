@@ -29,13 +29,17 @@ export const DefaultButton: React.FC<DefaultButtonProps> = ({ text, link }) => {
 	}, [link]);
 
 	if (!resolvedLink) {
-		return null;
+		return (
+			<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-2xl">
+				{ text }
+			</button>
+		);
 	}
 
 
 	return (
 		<Link href={ resolvedLink } >
-			<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-xl">
+			<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-2xl">
 				{ text }
 			</button>
 		</Link>

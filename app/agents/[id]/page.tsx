@@ -18,26 +18,25 @@ const AgentPage = () => {
 				setAgent(res);
 			});
 
-	}, [params]);
+	}, [params.id]);
 
-	console.log(params);
 
 	return (
 		<>
 			{ agent
 				?
-				<div className="flex flex-col items-center justify-center h-full">
+				<div className="flex  items-center  ">
 					<div>
-						<h2>
+						<h2 className="text-8xl font-bold">
 							{ agent.displayName }
 						</h2>
 					</div>
-					<div>
-						<Image src={ agent.bustPortrait } alt={ agent.displayName } fill />
+					<div className="h-full">
+						<Image src={ agent.fullPortrait } alt={ agent.displayName } width={ 550 } height={ 500 } quality={ 100 }  />
 					</div>
 				</div>
 				:
-				<div>LOADING</div>
+				<div></div>
 			}
 		</>
 	);
