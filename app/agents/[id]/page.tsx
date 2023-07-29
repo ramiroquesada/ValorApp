@@ -10,8 +10,6 @@ const AgentPage = () => {
 
 	const [agent, setAgent] = useState<Agent>();
 
-	const [isLoading, setIsLoading] = useState(true);
-
 	const params = useParams();
 
 	useEffect(() => {
@@ -26,20 +24,20 @@ const AgentPage = () => {
 
 	return (
 		<>
-			{ agent ? 
-			
-			<div className="flex flex-col items-center justify-center h-full">
-				<div>
-					<h2>
-						{ agent.displayName }
-					</h2>
+			{ agent
+				?
+				<div className="flex flex-col items-center justify-center h-full">
+					<div>
+						<h2>
+							{ agent.displayName }
+						</h2>
+					</div>
+					<div>
+						<Image src={ agent.bustPortrait } alt={ agent.displayName } fill />
+					</div>
 				</div>
-				<div>
-					<Image src={agent.bustPortrait} alt={agent.displayName} fill />
-				</div>
-			</div>
-			: 
-			<div>LOADING</div>
+				:
+				<div>LOADING</div>
 			}
 		</>
 	);
