@@ -12,6 +12,12 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+			fontFamily: {
+				valorant: ['var(--font-valorant)'],
+				tungsten: ['var(--font-tungsten)'],
+				roboto: ['var(--font-roboto)'],
+
+			}
     },
   },
   plugins: [],
